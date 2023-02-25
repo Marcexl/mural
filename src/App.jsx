@@ -17,7 +17,7 @@ function App (){
   useEffect( () =>{
     setInterval(() => {
       refetch()
-    }, 20000)
+    }, 10000)
   },[])
 
   if (loading) {

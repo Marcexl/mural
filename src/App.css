@@ -126,3 +126,18 @@ h6{
 .banner h2{
   font-size: 2rem;
 }
+.loader{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+}
+
+.p-progress-spinner{
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  opacity: 0.1;
+}
