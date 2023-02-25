@@ -4,10 +4,9 @@ import "primeicons/primeicons.css";
 import { ProgressSpinner } from 'primereact/progressspinner';
 import useGoogleSheets from 'use-google-sheets';
 import { Card } from 'primereact/card';
-import Video from './back.mp4';
-import './App.css'
-import { useEffect } from "react";
 import { Background } from "./Background";
+import './App.css'
+
 function App (){
 
   const { data, loading, error, refetch } =  useGoogleSheets({
@@ -15,16 +14,14 @@ function App (){
     sheetId: process.env.REACT_APP_GOOGLE_SHEETS_ID,
   });
 
-  useEffect( () =>{
     setInterval(() => {
       refetch()
-    }, 10000)
-  },[])
+    }, 20000)
 
   if (loading) {
     return(
       <Background>
-        <ProgressSpinner />
+        <div className="loader"><ProgressSpinner /></div>
       </Background>
     )
   }
