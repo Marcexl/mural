@@ -15,30 +15,36 @@ function App (){
 
 
   if (loading) {
-    return(<ProgressSpinner />)
+    return(<div className="loader"><ProgressSpinner /></div>)
   }
 
   if (error) {
     return <div>Error!</div>;
   }
-
+  let increment = 0.2;
   if(data){
     const suenios = data[0]['data']; 
     return(
+    <>
       <div className="container-fluid">
         <div className="video-background">
           <video loop autoPlay muted className="video">
             <source src={Video} type="video/mp4"></source>
           </video>
         </div>
+        <div className="banner">
+          <h6>MIRAI HOMBU</h6>
+          <h2>LXS CHICXS HACEMOS HISTORIA</h2>
+        </div>
         <div className="suenios-container">
           {
             suenios.map((mirai, index) => {
-                let idClass = Math.floor(Math.random() * 5)
+                increment = increment+increment
+                let idClass = Math.floor(Math.random() * 7)
                 return (
-                    <Card title={mirai.nombre} className={ `card-${idClass}`} key={index}>
+                    <Card title={mirai.suenio} className={ `card-${idClass}`} style={{animationDelay: `${increment}`}} key={index}>
                       <p className='m-0'>
-                        "{mirai.suenio}"
+                        {mirai.nombre}
                       </p>
                     </Card>
                 );
@@ -46,6 +52,7 @@ function App (){
           }
         </div>
       </div>
+      </>
     );
   }
 }

@@ -1,5 +1,18 @@
+a,
+p,
+span,
+table,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family: 'Shantell Sans', cursive;
+}
 .video-background{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,9 +25,28 @@
   width: 100%;
 }
 .p-card{
-  width: 250px;
+  width: auto;
+  min-width: 150px;
   z-index: 11;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
+  position: relative;
+  animation: growup .5s ease-in-out 0s forwards;
+  transition: all .3s;
+  transform: scale(0);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.p-card:hover{
+  transform: scale(1.1);
+  border: 1px solid orange;
+}
+
+.p-card:nth-child(odd) {
+  top: 0;
+}
+.p-card:nth-child(even) {
+  top:10px;
 }
 
 .p-card .p-card-body{
@@ -26,29 +58,71 @@
 }
 
 .card-1{
-  background-color: rgba(255, 192, 203, 0.9);
+  background-color: rgba(255, 192, 203, 0.95);
 }
 
 .card-2{
-  background-color: rgba(173, 216, 230, 0.9);
+  background-color: rgba(173, 216, 230, 0.95);
 }
 
 .card-3{
-  background-color: rgba(144, 238, 144, 0.9);
+  background-color: rgba(144, 238, 144, 0.95);
 }
 
 .card-4{
-  background-color: rgba(192, 192, 192, 0.9);
+  background-color: rgba(192, 192, 192, 0.95);
 }
 
 .card-5{
-  background-color: rgba(255, 255, 0, 0.9);
+  background-color: rgba(255, 255, 0, 0.95);
+}
+
+.card-6{
+  background-color: rgba(0, 255, 251, 0.95);
+}
+
+.card-7{
+  background-color: rgba(249, 60, 132, 0.95);
 }
 
 .suenios-container{
   position: relative;
   padding: 30px;
   display: flex;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   z-index: 11;
+}
+
+@keyframes growup{
+  from{
+    transform: scale(0);
+  }to{
+    transform: scale(1);
+  }
+}
+
+.banner{
+  width: auto;
+  position: fixed;
+  z-index: 111;
+  background-color: rgba(84, 84, 166,0.9);
+  color: white;
+  left: 0;
+  bottom: 30px;
+  padding: 5px 30px;
+  opacity: 0.9;
+}
+
+.banner h2,
+.banner h6{
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 5px 0;
+}
+.banner h6{
+  font-size: 1.2rem;
+}
+.banner h2{
+  font-size: 2rem;
 }
