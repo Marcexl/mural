@@ -9,16 +9,16 @@ import './App.css'
 import { useEffect } from "react";
 function App (){
 
-  const { data, loading, error, refetch} =  useGoogleSheets({
+  const { data, loading, error, refetch } =  useGoogleSheets({
     apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
     sheetId: process.env.REACT_APP_GOOGLE_SHEETS_ID,
   });
 
-  /*useEffect( () =>{
+  useEffect( () =>{
     setInterval(() => {
-      refetch
-    }, 10000)
-  },[])*/
+      refetch()
+    }, 20000)
+  },[])
 
   if (loading) {
     return(<div className="loader"><ProgressSpinner /></div>)
@@ -48,7 +48,6 @@ function App (){
           {
             suenios.map((mirai, index) => {
               newincrement = increment+newincrement
-              console.log(newincrement)
               let idClass = Math.floor(Math.random() * 7)
               return (
                   <Card title={mirai.suenio} className={ `card-${idClass}`} style={{animationDelay: `${increment}`}} key={index}>
