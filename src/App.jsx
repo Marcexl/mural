@@ -14,9 +14,10 @@ function App (){
     sheetId: process.env.REACT_APP_GOOGLE_SHEETS_ID,
   });
 
-    setInterval(() => {
+    /*setInterval(() => {
       refetch()
     }, 20000)
+    */
 
   if (loading) {
     return(

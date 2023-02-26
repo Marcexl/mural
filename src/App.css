@@ -133,11 +133,12 @@ h6{
   left: 0;
   top: 0;
   display: flex;
+  z-index: 1111;
 }
 
 .p-progress-spinner{
   position: absolute;
   left: calc(50% - 50px);
   top: calc(50% - 50px);
-  opacity: 0.1;
+  opacity: 0.5;
 }
