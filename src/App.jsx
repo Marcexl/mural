@@ -1,11 +1,8 @@
-import "primereact/resources/themes/lara-light-indigo/theme.css";     
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";    
 import { ProgressSpinner } from 'primereact/progressspinner';
 import useGoogleSheets from 'use-google-sheets';
 import { Card } from 'primereact/card';
 import { Background } from "./Background";
-import './App.css'
+import { useState } from 'react';
 
 function App (){
 
@@ -41,10 +38,9 @@ function App (){
             suenios.map((mirai, index) => {
               newincrement = increment+newincrement
               let idClass = Math.floor(Math.random() * 7)
-              console.log(idClass)
               return (
                   <Card title={mirai.suenio} className={ `card-${idClass}`} style={{animationDelay: `${newincrement}s`}} key={index}>
-                    <p className='m-0'>
+                    <p className='mt-0 mb-0'>
                       {mirai.nombre}
                     </p>
                   </Card>

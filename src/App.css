@@ -70,7 +70,7 @@ h6{
 }
 
 .card-4{
-  background-color: rgba(192, 192, 192, 0.95);
+  background-color: rgba(255, 140, 165, 0.95);
 }
 
 .card-5{
@@ -92,6 +92,11 @@ h6{
   flex-wrap: wrap;
   gap: 1rem;
   z-index: 11;
+}
+
+.p-card .p-card-title {
+  font-size: 1.3rem;
+  max-width: 300px;
 }
 
 @keyframes growup{
