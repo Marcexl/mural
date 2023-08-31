@@ -22,11 +22,11 @@ function App (){
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = `${nombre},${mensaje}`;
+    const dataString = `${nombre},${mensaje}`;
     if(nombre !== '' && mensaje !== ''){
       try {
         
-        const response = await updateSpreadSheet(data);
+        const response = await updateSpreadSheet(dataString);
         console.log(response);
         toast.current.show({severity:'success', summary: 'Vamos!', detail:'Gracias por enviar tu mensaje', life: 3000});
         setVisible(false);
